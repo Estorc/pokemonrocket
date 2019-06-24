@@ -1,0 +1,222 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Pokémon Rocket</title>
+		<link rel="icon" href="icon.gif" type="image/gif">
+		<link rel ="stylesheet" media="screen" type = "text/css"title="coresheet" href="https://cdn.discordapp.com/attachments/553618831583608863/553690088643756053/stylesheet.css" />
+		<style type="text/css">a:link{text-decoration:none}</style>
+		<script src='voice.js'></script>
+    </head>
+    <body onkeydown="keyCode(event)">
+
+	<!-- Dégradé blanc	-->
+	
+	
+	<div class="top">
+	<canvas></canvas>
+	</div>
+	
+	<div class="top" align="center">
+	<IMG SRC="https://media.discordapp.net/attachments/553618831583608863/553619010537914376/background-top.png">
+	</div>
+	<!-- Dégradé blanc	-->
+
+
+
+	<div id="map" align="center">
+	<strong><p>???</p></strong>
+	<img src="https://cdn.discordapp.com/attachments/553696734883348480/553696818182094858/unknown.png" width="300" height="300">
+	</div>
+    
+<div style="display:none;">
+  <img id="source" src="https://media.discordapp.net/attachments/553618831583608863/553619190842392596/Carte_Finale.png">
+</div>
+
+<div style="display:none;">
+  <img id="source2" src="https://media.discordapp.net/attachments/553618831583608863/553619016099299345/cursor.png">
+</div>
+    <script>
+    var btn = document.querySelector('button');
+    var canvas = document.querySelector('canvas');
+    var ctx = canvas.getContext('2d');
+    var image = document.getElementById("source");
+	var image2 = document.getElementById("source2");
+    var WIDTH = document.documentElement.clientWidth;
+    var HEIGHT = document.documentElement.clientHeight-4;
+    var MAXWIDTH = Math.floor(((document.documentElement.clientWidth)/16)/2);
+    var MAXHEIGHT = Math.floor(((document.documentElement.clientHeight-4)/16)/2);
+	var posx = 5;
+	var posy = 2;
+	var init = 0;
+
+    canvas.width = WIDTH;
+    canvas.height = HEIGHT;
+	
+function keyCode(event) {
+  var x = event.keyCode;
+  if (x == 37) {
+        posx -= 1;
+		draw();
+  }
+  if (x == 40) {
+        posy += 1;
+		draw();
+  }
+  if (x == 39) {
+        posx += 1;
+		draw();
+  }
+  if (x == 38) {
+        posy -= 1;
+		draw();
+  }
+}
+
+    function random(number) {
+      return Math.floor(Math.random()*number);
+    }
+	
+    function draw() {
+      ctx.clearRect(0,0,WIDTH,HEIGHT);
+	  if (posx > MAXWIDTH) {
+	  var posxmap = ((posx-MAXWIDTH)*16)*-1;
+	  var posxcurs = MAXWIDTH*16;
+	  } else {
+	  var posxmap = 0;
+	  var posxcurs = posx*16;
+	  }
+	  if (posy > MAXHEIGHT) {
+	  var posymap = ((posy-MAXHEIGHT)*16)*-1;
+	  var posycurs = MAXHEIGHT*16;
+	  } else {
+	  var posymap = 0;
+	  var posycurs = posy*16;
+	  }
+
+	  if (posx > (115-MAXWIDTH)) {
+	  var posxmap = (((115-MAXWIDTH)-MAXWIDTH)*16)*-1;
+	  var posxcurs = (posx-((115-MAXWIDTH)-MAXWIDTH))*16;
+	  }
+	  
+	  if (posy > (108-MAXHEIGHT)) {
+	  var posymap = (((108-MAXHEIGHT)-MAXHEIGHT)*16)*-1;
+	  var posycurs = (posy-((108-MAXHEIGHT)-MAXHEIGHT))*16;
+	  }
+		ctx.drawImage(image, posxmap, posymap);
+	  ctx.drawImage(image2, posxcurs, posycurs);
+	  
+	  document.getElementById('map').innerHTML = '<strong><p>???</p></strong> <img src="https://cdn.discordapp.com/attachments/553696734883348480/553696818182094858/unknown.png" width="300" height="300">';
+	  
+	  
+	  // Route 1 //
+	  
+	  if (posx == 18) {
+	  if (posy == 5) {
+	  document.getElementById('map').innerHTML = '<strong><p>Base Rocket</p></strong> <A HREF="https://cdn.discordapp.com/attachments/553696734883348480/553696916957822989/Route_1_Base_Rocket.png" target="_top"><img src="https://cdn.discordapp.com/attachments/553696734883348480/553696916957822989/Route_1_Base_Rocket.png" width="300" height="300"><A>';
+	  }
+	  }
+	  if (posx == 18) {
+	  if (posy == 6) {
+	  document.getElementById('map').innerHTML = '<strong><p>Base Rocket</p></strong> <A HREF="https://cdn.discordapp.com/attachments/553696734883348480/553696916957822989/Route_1_Base_Rocket.png" target="_top"><img src="https://cdn.discordapp.com/attachments/553696734883348480/553696916957822989/Route_1_Base_Rocket.png" width="300" height="300"><A>';
+	  }
+	  }
+	  if (posx == 19) {
+	  if (posy == 5) {
+	  document.getElementById('map').innerHTML = '<strong><p>Base Rocket</p></strong> <A HREF="https://cdn.discordapp.com/attachments/553696734883348480/553696916957822989/Route_1_Base_Rocket.png" target="_top"><img src="https://cdn.discordapp.com/attachments/553696734883348480/553696916957822989/Route_1_Base_Rocket.png" width="300" height="300"><A>';
+	  }
+	  }
+	  if (posx == 19) {
+	  if (posy == 6) {
+	  document.getElementById('map').innerHTML = '<strong><p>Base Rocket</p></strong> <A HREF="https://cdn.discordapp.com/attachments/553696734883348480/553696916957822989/Route_1_Base_Rocket.png" target="_top"><img src="https://cdn.discordapp.com/attachments/553696734883348480/553696916957822989/Route_1_Base_Rocket.png" width="300" height="300"><A>';
+	  }
+	  }
+	  
+	  // Route 2 //
+	  
+	  if (posx == 20) {
+	  if (posy == 6) {
+	  document.getElementById('map').innerHTML = '<strong><p>Route 2</p></strong> <A HREF="https://cdn.discordapp.com/attachments/553696734883348480/553696945475026954/Route_2.png" target="_top"><img src="https://cdn.discordapp.com/attachments/553696734883348480/553696945475026954/Route_2.png" width="300" height="300"><A>';
+	  }
+	  }
+	  if (posx == 21) {
+	  if (posy == 6) {
+	  document.getElementById('map').innerHTML = '<strong><p>Route 2</p></strong> <A HREF="https://cdn.discordapp.com/attachments/553696734883348480/553696945475026954/Route_2.png" target="_top"><img src="https://cdn.discordapp.com/attachments/553696734883348480/553696945475026954/Route_2.png" width="300" height="300"><A>';
+	  }
+	  }
+	  if (posx == 22) {
+	  if (posy == 6) {
+	  document.getElementById('map').innerHTML = '<strong><p>Route 2</p></strong> <A HREF="https://cdn.discordapp.com/attachments/553696734883348480/553696945475026954/Route_2.png" target="_top"><img src="https://cdn.discordapp.com/attachments/553696734883348480/553696945475026954/Route_2.png" width="300" height="300"><A>';
+	  }
+	  }
+	  if (posx == 22) {
+	  if (posy == 7) {
+	  document.getElementById('map').innerHTML = '<strong><p>Route 2</p></strong> <A HREF="https://cdn.discordapp.com/attachments/553696734883348480/553696945475026954/Route_2.png" target="_top"><img src="https://cdn.discordapp.com/attachments/553696734883348480/553696945475026954/Route_2.png" width="300" height="300"><A>';
+	  }
+	  }
+	  if (posx == 22) {
+	  if (posy == 8) {
+	  document.getElementById('map').innerHTML = '<strong><p>Route 2</p></strong> <A HREF="https://cdn.discordapp.com/attachments/553696734883348480/553696945475026954/Route_2.png" target="_top"><img src="https://cdn.discordapp.com/attachments/553696734883348480/553696945475026954/Route_2.png" width="300" height="300"><A>';
+	  }
+	  }
+
+	  // Aqua-Bourg //
+	  
+	  if (posx == 22) {
+	  if (posy == 9) {
+	  document.getElementById('map').innerHTML = '<strong><p>Aqua-Bourg</p></strong> <A HREF="https://cdn.discordapp.com/attachments/553696734883348480/553696894501519476/Aqua-Bourg.png" target="_top"><img src="https://cdn.discordapp.com/attachments/553696734883348480/553696894501519476/Aqua-Bourg.png" width="300" height="300"><A>';
+	  }
+	  }
+	  
+	  // Route 3 //
+	  
+	  if (posx == 21) {
+	  if (posy == 9) {
+	  document.getElementById('map').innerHTML = '<strong><p>Route 3</p></strong> <A HREF="https://cdn.discordapp.com/attachments/553696734883348480/553696934238486529/Route_3.png" target="_top"><img src="https://cdn.discordapp.com/attachments/553696734883348480/553696934238486529/Route_3.png" width="300" height="300"><A>';
+	  }
+	  }
+	  if (posx == 20) {
+	  if (posy == 9) {
+	  document.getElementById('map').innerHTML = '<strong><p>Route 3</p></strong> <A HREF="https://cdn.discordapp.com/attachments/553696734883348480/553696934238486529/Route_3.png" target="_top"><img src="https://cdn.discordapp.com/attachments/553696734883348480/553696934238486529/Route_3.png" width="300" height="300"><A>';
+	  }
+	  }
+	  if (posx == 19) {
+	  if (posy == 9) {
+	  document.getElementById('map').innerHTML = '<strong><p>Route 3</p></strong> <A HREF="https://cdn.discordapp.com/attachments/553696734883348480/553696934238486529/Route_3.png" target="_top"><img src="https://cdn.discordapp.com/attachments/553696734883348480/553696934238486529/Route_3.png" width="300" height="300"><A>';
+	  }
+	  }
+	  if (posx == 18) {
+	  if (posy == 9) {
+	  document.getElementById('map').innerHTML = '<strong><p>Route 3</p></strong> <A HREF="https://cdn.discordapp.com/attachments/553696734883348480/553696934238486529/Route_3.png" target="_top"><img src="https://cdn.discordapp.com/attachments/553696734883348480/553696934238486529/Route_3.png" width="300" height="300"><A>';
+	  }
+	  }
+	  if (posx == 17) {
+	  if (posy == 9) {
+	  document.getElementById('map').innerHTML = '<strong><p>Route 3</p></strong> <A HREF="https://cdn.discordapp.com/attachments/553696734883348480/553696934238486529/Route_3.png" target="_top"><img src="https://cdn.discordapp.com/attachments/553696734883348480/553696934238486529/Route_3.png" width="300" height="300"><A>';
+	  }
+	  }
+	  if (posx == 16) {
+	  if (posy == 9) {
+	  document.getElementById('map').innerHTML = '<strong><p>Route 3</p></strong> <A HREF="https://cdn.discordapp.com/attachments/553696734883348480/553696934238486529/Route_3.png" target="_top"><img src="https://cdn.discordapp.com/attachments/553696734883348480/553696934238486529/Route_3.png" width="300" height="300"><A>';
+	  }
+	  }
+    }
+	
+	alert ("Déplace toi sur la carte avec les flèches directionnelles !");
+	
+    btn.addEventListener('click',draw);
+      
+    </script>
+	
+	</strong>
+
+
+
+
+
+
+
+
+    </body>
+
+</html>
